@@ -11,13 +11,13 @@ import {
 const router = Router();
 
 // Sync routes
-router.get("/products", syncProducts);
-router.get("/customers", syncCustomers);
-router.get("/orders", syncOrders);
+router.get("/:tenantId/products", syncProducts);
+router.get("/:tenantId/customers", syncCustomers);
+router.get("/:tenantId/orders", syncOrders);
 
-// View routes (for debugging)
-router.get("/data/products", listProducts);
-router.get("/data/customers", listCustomers);
-router.get("/data/orders", listOrders);
+// View data routes
+router.get("/:tenantId/data/products", listProducts);
+router.get("/:tenantId/data/customers", listCustomers);
+router.get("/:tenantId/data/orders", listOrders);
 
 export default router;
